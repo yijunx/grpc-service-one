@@ -10,9 +10,13 @@ services:
       - ..:/opt/yijun/code
     command: ["tail -f /dev/null"]
     ports:
-      - 8123:8000
-    depends_on:
-      - db-for-user-backend
+      - 9876:8000
+    networks:
+      - grpc-services
+
+networks:
+  grpc-services:
+    external: true
 
 
 

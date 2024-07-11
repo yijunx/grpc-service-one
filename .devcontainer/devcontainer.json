@@ -1,5 +1,5 @@
 {
-	"name": "play-with-grpc",
+	"name": "grpc-service-one",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/opt/yijun/code",

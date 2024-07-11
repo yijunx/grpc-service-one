@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package helloworld;
+
+service Greeter {
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
+    rpc SayHelloStreamReply (HelloRequest) returns (stream HelloReply) {}
+    rpc SayHelloBidiStream (stream HelloRequest) returns (stream HelloReply) {}
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloReply {
+    string message = 1;
+}
+
+// say you are at root
+// in root you got app and protos dir
+// and you want to put your hellowold protos into app/helloworld
+// python -m grpc_tools.protoc -Iapp/helloworld=protos --python_out=. --pyi_out=. --grpc_python_out=. protos/helloworld.proto
